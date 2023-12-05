@@ -1,6 +1,6 @@
 Feature: Validating Header
 
-Background: User is logged into ProtoCommerce website
+Background: User is on home page
 
 Scenario: Validating ProtoCommerce header
 Given User is on shopping page
