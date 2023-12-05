@@ -1,32 +1,13 @@
-Feature: Validating Left frame button
+Feature: Validating upper right frame
 
-Background: User is logged into ProtoCommerce website
-Scenario: Validating category1 button
+Background: User is on home page
+ 
+ Scenario: Validating paginator next button
 Given User is on shopping page
-When User clicks on category1 button
-Then User should be on home page
+When User clicks on next image button
+Then User should see next image
 
-Scenario: Validating category1 button
+Scenario: Validating paginator next button
 Given User is on shopping page
-When User clicks on category1 button
-Then User get an error msg: button not clickable
-
-Scenario: Validating category2 button
-Given User is on shopping page
-When User clicks on category2 button
-Then User should be on home page
-
-Scenario: Validating category2 button
-Given User is on shopping page
-When User clicks on category2 button
-Then User get an error msg: button not clickable
-
-Scenario: Validating category3 button
-Given User is on shopping page
-When User clicks on category3 button
-Then User should be on home page
-
-Scenario: Validating category3 button
-Given User is on shopping page
-When User clicks on category3 button
-Then User get an error msg: button not clickable
+When User clicks on previous image button
+Then User should see previous image

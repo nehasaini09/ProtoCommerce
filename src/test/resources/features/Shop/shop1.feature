@@ -1,6 +1,6 @@
 Feature: Shop button functionality
 
-Background: User is logged into ProtoCommerce website
+Background: User is on home page
        Scenario: Validating shop button
        Given User is on login page
        When User clicks on shop button
