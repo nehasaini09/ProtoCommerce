@@ -1,10 +1,11 @@
-Feature: Validating Footer
+Feature: Validating Left title
 
-Background: User is logged into ProtoCommerce website
- Scenario: Validating ProtoCommerce Footer
- Given User is on shopping page
- Then User should see a msg: Copyright © ProtoCommerce 2018
- 
- Scenario: Validating ProtoCommerce Footer
- Given User is on shopping page
- Then User cannot see any msg
+Background: User is on home page
+
+Scenario: Validating Left frame title
+Given User is on shopping page
+Then User should see a heading: Shop Title
+
+Scenario: Validating Left frame title
+Given User is on shopping page
+Then User not able to see heading
