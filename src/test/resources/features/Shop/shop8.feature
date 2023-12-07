@@ -1,45 +1,27 @@
-Feature: Validating products images
+Feature: Validating products text
 
-Background: User is logged into ProtoCommerce website
+Background: User is on home page
 
-Scenario: Validating products images
+Scenario: Validating iphone text
 Given User is on shopping page
-When User clicks on iphone image
+When User clicks on iphone text
 Then User should be on home page
 
-Scenario: Validating products images
+Scenario: Validating Samsung text
 Given User is on shopping page
-When User clicks on iphone image
-Then User get an error msg: Image not clickable
-
-Scenario: Validating products images
-Given User is on shopping page
-When User clicks on Samsung image
+When User clicks on Samsung text
 Then User should be on home page
 
-Scenario: Validating products images
+Scenario: Validating Nokia text
 Given User is on shopping page
-When User clicks on Samsung image
-Then User get an error msg: Image not clickable
-
-Scenario: Validating products images
-Given User is on shopping page
-When User clicks on Nokia image
+When User clicks on Nokia text
 Then User should be on home page
 
-Scenario: Validating products images
+Scenario: Validating Blackberry text
 Given User is on shopping page
-When User clicks on Nokia image
-Then User get an error msg: Image not clickable
-
-Scenario: Validating products images
-Given User is on shopping page
-When User clicks on Blackberry image
+When User clicks on Blackberry text
 Then User should be on home page
 
-Scenario: Validating products images
-Given User is on shopping page
-When User clicks on Blackberry image
-Then User get an error msg: Image not clickable
+
 
 
