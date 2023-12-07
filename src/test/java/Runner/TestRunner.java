@@ -18,7 +18,7 @@ import io.cucumber.testng.CucumberOptions;
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },// reporting purpose
 		monochrome = false, // console output
 		//tags = "", // tags from feature file
-		features = { "src/test/resources/Feature" }, // location of feature files
+		features = { "src/test/resources/features" }, // location of feature files
 		glue = { "stepDefinition", "hooks" }) // location of step definition files
 
 
