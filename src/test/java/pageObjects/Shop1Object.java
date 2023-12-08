@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import baseClass.BaseClass;
 import controller.Controller;
+import driverFactory.DriverFactory;
 
-public class Shop1Object extends BaseClass{
+public class Shop1Object extends DriverFactory{
 	
 	
 	
