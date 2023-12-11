@@ -11,22 +11,19 @@ import driverFactory.DriverFactory;
 public class Controller extends DriverFactory implements ControllerInterface {
 		
 		
-		Actions action=new Actions(driver);
-		Select select;
-		
-
-		public void click(WebDriver driver, WebElement element) {
-			action.moveToElement(element).click().build().perform();
-			
-			
-		}
+	Actions action=new Actions(driver);
+	Select select;
 
 
-		public String getTitle(WebDriver driver) {
+	public void click(WebDriver driver, WebElement element) {
+		action.moveToElement(element).click().build().perform();
+      }
+
+
+	public String getTitle(WebDriver driver) {
 		return driver.getTitle();
-			
-		}
+				}
 
-	}
+}
 
 

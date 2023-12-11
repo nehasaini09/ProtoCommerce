@@ -15,6 +15,12 @@ public class Shop1Object extends DriverFactory{
 	@FindBy(xpath="//a[text()='Shop']")
 	private WebElement shopBtn;
 	
+	@FindBy(xpath="//a[text()='ProtoCommerce Home']")
+	private WebElement protoBtn;
+	
+	@FindBy(xpath=".btn.btn-primary")
+	private WebElement checkoutBtn;
+	
 	Controller control = new Controller();
 	
 	public void Shop1Object() {
@@ -22,7 +28,9 @@ public class Shop1Object extends DriverFactory{
 	}
 	
 	public void validatingShopBtn() {
-		control.click(driver, shopBtn);
+		shopBtn.isSelected();
+		shopBtn.click();
+		//control.click(driver, shopBtn);
 	}
 	
 	public void verifyHomePage() {
@@ -31,5 +39,26 @@ public class Shop1Object extends DriverFactory{
 		System.out.println("User is on Home page"+title);
 		
 	}
+	
+	public void verifyShopPage() {
+		String title = driver.getTitle();
+		Assert.assertEquals(false, title);
+		System.out.println("User is on Shopping page"+title);
+	}
+	
+	public void verifyProtoComm() {
+		control.click(driver, protoBtn);
+	}
 
+	public void clickOnChkBtn() {
+		control.click(driver, checkoutBtn);
+	
+}
+	
+	public void verifyCheckoutPage() {
+		String title=driver.getTitle();
+		Assert.assertEquals(false, title);
+		
+	}
+	
 }

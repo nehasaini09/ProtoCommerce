@@ -1,11 +1,12 @@
 package stepDefinitions;
 
+import driverFactory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.Shop1Object;
 
-public class ShopSD {
+public class ShopSD extends DriverFactory {
 	
 	private Shop1Object shop1 = new Shop1Object();
 	
@@ -39,38 +40,43 @@ public class ShopSD {
 	//**********************************2Feature****************************
 	@Given("User is on shopping page")
 	public void user_is_on_shopping_page() {
+		shop1.verifyShopPage();
 	    
 	}
 
 	@When("User clicks on ProtoCommerce Title")
 	public void user_clicks_on_proto_commerce_title() {
+		shop1.verifyProtoComm();
 	    
 	}
 
 	@Then("User should be on home page")
 	public void user_should_be_on_home_page() {
+		shop1.verifyHomePage();
 	    
 	}
 
 	@When("User clicks on Checkout button")
 	public void user_clicks_on_checkout_button() {
-	   
+	   shop1.clickOnChkBtn();
 	}
 
 	@Then("User should be on checkout page")
 	public void user_should_be_on_checkout_page() {
-	    
+	    shop1.verifyCheckoutPage();
 	}
 
 	@Then("User get an error msg: button not clickable")
 	public void user_get_an_error_msg_button_not_clickable() {
-	   
+	   System.out.println("Error");
 	}
 
 	//********************************Feature 3*************************************
 	
 	@Then("User should see a heading: Shop Title")
 	public void user_should_see_a_heading_shop_title() {
+		
+		
 	}
 
 	@Then("User not able to see heading")
