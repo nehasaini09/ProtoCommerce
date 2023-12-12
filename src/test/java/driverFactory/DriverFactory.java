@@ -26,7 +26,7 @@ public static String browserName=configreader.getbrowser();
 		else if(browserName.equalsIgnoreCase("firefox")){
 				driver = new FirefoxDriver();
 	     }
-	    
+	    //url will open
 		driver.get(url);
 		driver.manage().window().maximize();
 		
