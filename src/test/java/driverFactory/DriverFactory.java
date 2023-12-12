@@ -8,7 +8,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ConfigReader;
 
 public class DriverFactory {
@@ -26,10 +25,12 @@ public static String browserName=configreader.getbrowser();
 		else if(browserName.equalsIgnoreCase("firefox")){
 				driver = new FirefoxDriver();
 	     }
-	    //url will open
 		driver.get(url);
 		driver.manage().window().maximize();
 		
+	    
+		driver.get(url);
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			
@@ -39,4 +40,8 @@ public static String browserName=configreader.getbrowser();
 			driver.close();
 		}
 
+
 }
+
+
+

@@ -17,10 +17,8 @@ import io.cucumber.java.Before;
 		public void tearDown()
 		{
 		   DriverFactory.teardown();
-//hooks		  
+	  
 		}
 		
 
 	}
-
-
