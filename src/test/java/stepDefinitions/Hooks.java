@@ -1,12 +1,9 @@
 package stepDefinitions;
-import java.io.IOException;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import java.io.IOException;
 import driverFactory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 
 	public class Hooks {
 	
@@ -17,13 +14,10 @@ import io.cucumber.java.Scenario;
 	    }
 	    
 		@After
-		public void tearDown(Scenario scenario)
+		public void tearDown()
 		{
 		   DriverFactory.teardown();
-		   String screenshotName = scenario.getName().replaceAll(" ", "_");
-			byte[] sourcePath = ((TakesScreenshot)DriverFactory.driver).getScreenshotAs(OutputType.BYTES);
-			//scenario.attach(sourcePath, "image/png", screenshotName);
-		
+		  
 		}
 		
 

@@ -40,6 +40,7 @@ public class ShopSD extends DriverFactory {
 	//**********************************2Feature****************************
 	@Given("User is on shopping page")
 	public void user_is_on_shopping_page() {
+		shop1.validatingShopBtn();
 		shop1.verifyShopPage();
 	    
 	}
