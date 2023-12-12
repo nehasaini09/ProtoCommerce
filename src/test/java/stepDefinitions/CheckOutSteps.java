@@ -1,30 +1,31 @@
 package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import factory.DriverFactory;
+
+import driverFactory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.CheckOutHomePage;
-import pages.CheckOut1Page;
-import pages.CheckOut2Page;
+import pageObjects.CheckOut1Page;
+import pageObjects.CheckOut2Page;
+import pageObjects.CheckOutHomePage;
 
 
 public class CheckOutSteps {
    
 	 WebDriver driver;
-	 public static CheckOut1Page cp;
+	 private CheckOut1Page cp = new CheckOut1Page();
 	 public static CheckOut2Page checkoutpage;
 
 	@Given("user is on shop page")
 	public void user_is_on_shop_page() {
-		driver = DriverFactory.getDriver();
+		//driver = DriverFactory.getDriver();
 	}
 
 	@When("user clicks on checkout button")
 	public void user_clicks_on_checkout_button() {
-		CheckOutHomePage hp = new CheckOutHomePage(driver);
+		CheckOutHomePage hp = new CheckOutHomePage();
 		cp= hp.emptyCheckOut();
 	
 	}
@@ -47,7 +48,7 @@ public class CheckOutSteps {
 	@When("User clicks the Add button for all the product")
 	public void user_clicks_the_add_button_for_all_the_product() {
 
-		 CheckOutHomePage hp = new CheckOutHomePage(driver);
+		 CheckOutHomePage hp = new CheckOutHomePage();
 		 hp.clickOnButton1();
 		 hp.clickOnButton2();
 		
@@ -55,7 +56,7 @@ public class CheckOutSteps {
 
 	@And("User clicks the checkout button")
 	public void user_clicks_the_checkout_button() throws InterruptedException {
-		 CheckOutHomePage hp = new CheckOutHomePage(driver);
+		 CheckOutHomePage hp = new CheckOutHomePage();
 		 checkoutpage= hp.checkOut();
 	}
 
