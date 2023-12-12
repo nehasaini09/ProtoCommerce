@@ -21,17 +21,15 @@ public static String browserName=configreader.getbrowser();
 	public static void initializeBrowser() throws InterruptedException
 	{
 		if(browserName.equalsIgnoreCase("chrome")){
-			//WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+				driver = new ChromeDriver();
 		 }
 		else if(browserName.equalsIgnoreCase("firefox")){
-			//WebDriverManager.chromedriver().setup();
-			driver = new FirefoxDriver();
+				driver = new FirefoxDriver();
 	     }
 	    
 		driver.get(url);
 		driver.manage().window().maximize();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			
