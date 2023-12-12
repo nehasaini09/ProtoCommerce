@@ -29,7 +29,7 @@ public static String browserName=configreader.getbrowser();
 	    
 		driver.get(url);
 		driver.manage().window().maximize();
-		//Thread.sleep(2000);
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			
