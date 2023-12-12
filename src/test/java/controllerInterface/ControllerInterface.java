@@ -9,4 +9,6 @@ public interface ControllerInterface {
 	public void click(WebDriver driver,WebElement element);
 	public String getTitle(WebDriver driver);
 
+
 }
+
