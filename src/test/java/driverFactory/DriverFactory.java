@@ -8,32 +8,35 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class DriverFactory {
 
-	public static WebDriver driver;
+import utils.ConfigReader;
+
+public class DriverFactory {
 	
-	public static WebDriver initializeBrowser(String browserName)
+public static WebDriver driver;
+static ConfigReader configreader =new ConfigReader();
+public static String url=configreader.getAppUrl();
+public static String browserName=configreader.getbrowser();
+	
+	public static void initializeBrowser() throws InterruptedException
 	{
-		if(browserName.equals("chrome")){
-			driver = new ChromeDriver();
+		if(browserName.equalsIgnoreCase("chrome")){
+				driver = new ChromeDriver();
 		 }
-		else if(browserName.equals("firefox")){
-			driver = new FirefoxDriver();
+		else if(browserName.equalsIgnoreCase("firefox")){
+				driver = new FirefoxDriver();
 	     }
-	    else if(browserName.equals("edge")){
-			driver = new EdgeDriver();
-	     }
-		else if(browserName.equals("safari")) {
-			driver = new SafariDriver();
-		}
-		    driver.manage().deleteAllCookies();
-	        driver.manage().window().maximize();
-	      	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			return driver;
+	    
+		driver.get(url);
+		driver.manage().window().maximize();
+		//Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			
 	}
-		public static WebDriver getDriver()
-		{
-			return driver;
+		public static void teardown(){
+		
+			driver.close();
 		}
 
 }
