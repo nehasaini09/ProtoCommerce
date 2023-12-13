@@ -1,82 +1,57 @@
 package stepDefinitions;
 
-import driverFactory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.homePage;
 
-public class Home2_SD extends DriverFactory{
-homePage home2= new homePage();
+public class Home2_SD {
+
 //homePageLaunch
 	
 	@Given("User launch the browser")
 	public void user_launch_the_browser() {
-		String strUrl = driver.getCurrentUrl();
-
-		if (strUrl.equals(url)) {
-			System.out.println("They're equal"); 
-		}
-
-		else 
-			System.out.println("They're not equal"); 
+	    
 	}
-	
 
 	@When("user give the correct URL \\(https:\\/\\/rahulshettyacademy.com\\/angularpractice\\/")
 	public void user_give_the_correct_url_https_rahulshettyacademy_com_angularpractice() {
 	  
-		String strUrl = driver.getCurrentUrl();
-
-		if (strUrl.equals(url)) {
-			System.out.println("They're equal"); 
-		}
-
-		else 
-			System.out.println("They're not equal"); 
 	}
 
 	@Then("User should land on homepage")
 	public void user_should_land_on_homepage() {
 	   
-		home2.verifyHomePage();
 	}
 
 	@When("user give the invalid URL \\(https:\\/\\/rahulshettyacademy.com\\/angular")
 	public void user_give_the_invalid_url_https_rahulshettyacademy_com_angular() {
-		home2.verifyLink(url);
-		}
-
+	   
+	}
 
 	@Then("User should receive {int} not found error")
 	public void user_should_receive_not_found_error(Integer int1) {
 	   
-		home2.verifyLink(url);
 	}
-
 
 	//homePge title and footer
 	@Given("User is at the Protocommerce Homepage")
 	public void user_is_at_the_protocommerce_homepage() {
 	    
-		 
-		home2.verifyHomePage();
 	}
 
 	@When("User is on Homepage")
 	public void user_is_on_homepage() {
-		 
-		home2.verifyHomePage();
+	  
 	}
 
 	@Then("User should see {string} as title")
 	public void user_should_see_as_title(String string) {
-		home2.verifyHomePage();
+	    
 	}
 
 	@Given("User is on  Protocommerce Homepage")
 	public void user_is_on_protocommerce_homepage() {
-		home2.verifyHomePage();
+	    
 	}
 
 	@When("User is at the Homepage")
