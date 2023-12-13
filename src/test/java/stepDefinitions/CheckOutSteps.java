@@ -1,14 +1,15 @@
 package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import factory.DriverFactory;
+
+import driverFactory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.CheckOutHomePage;
-import pages.CheckOut1Page;
-import pages.CheckOut2Page;
+import pageObjects.CheckOut1Page;
+import pageObjects.CheckOut2Page;
+import pageObjects.CheckOutHomePage;
 
 
 public class CheckOutSteps {
@@ -19,7 +20,7 @@ public class CheckOutSteps {
 
 	@Given("user is on shop page")
 	public void user_is_on_shop_page() {
-		driver = DriverFactory.getDriver();
+		//driver = DriverFactory.getDriver();
 	}
 
 	@When("user clicks on checkout button")
